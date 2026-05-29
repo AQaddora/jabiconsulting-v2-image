@@ -208,13 +208,21 @@
       gap: 50px;
       align-items: stretch;
     }
-    /* V2 — abstract illustration hero (no harsh crop, softer feather) */
+    /* V2 — transparent illustration hero (floats on cream, no box) */
     .hero-visual-illus {
-      aspect-ratio: 4/3 !important;
-      -webkit-mask-image: radial-gradient(ellipse 90% 90% at 55% 50%, #000 60%, transparent 100%) !important;
-              mask-image: radial-gradient(ellipse 90% 90% at 55% 50%, #000 60%, transparent 100%) !important;
+      background: transparent !important;
+      border-radius: 0 !important;
+      min-height: 480px !important;
+      -webkit-mask-image: none !important;
+              mask-image: none !important;
+      overflow: visible !important;
     }
-    .hero-visual-illus img { object-fit: contain !important; object-position: center !important; }
+    .hero-visual-illus img {
+      object-fit: contain !important;
+      object-position: center !important;
+      filter: drop-shadow(0 24px 60px rgba(26,26,26,.18));
+    }
+    .hero-visual-illus::after { display: none !important; }
     .hero-grid h1 { font-size: clamp(28px, 3.8vw, 48px); }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
@@ -1079,7 +1087,7 @@
         </div>
       </div>
       <div class="hero-visual hero-visual-illus">
-        <img src="assets/imagery/hero-ai-head.jpg" alt="Abstract AI — intelligence, innovation, impact across MENA" />
+        <img src="assets/imagery/hero-ai-head.png" alt="Abstract AI — intelligence, innovation, impact across MENA" />
         <div class="hero-tag">
           <div class="badge mono"><b>● </b>Intelligence · Innovation · Impact</div>
         </div>
