@@ -199,30 +199,44 @@
     /* ---------- Hero ---------- */
     .hero {
       position: relative;
-      padding: 90px 0 80px;
+      padding: 56px 0 64px;
       overflow: hidden;
     }
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
+      grid-template-columns: 1.1fr .9fr;
       gap: 50px;
-      align-items: stretch;
+      align-items: center;
     }
-    /* V2 — transparent illustration hero (floats on cream, no box) */
+    .hero-grid h1 { font-size: clamp(26px, 2.8vw, 38px); line-height: 1.12; margin: 14px 0 16px; }
+    .hero-grid .lede { margin: 0 0 22px; }
+    .hero-grid .cta-row { margin-bottom: 0; }
+    .hero-grid .hero-stats { margin-top: 36px; padding-top: 24px; }
+    /* V2 — transparent illustration (floats on cream, no box, centered + capped) */
     .hero-visual-illus {
       background: transparent !important;
       border-radius: 0 !important;
-      min-height: 480px !important;
+      min-height: 0 !important;
       -webkit-mask-image: none !important;
               mask-image: none !important;
       overflow: visible !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      max-width: 520px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: 0;
+      aspect-ratio: 1 / 1;
     }
     .hero-visual-illus img {
+      width: 100% !important; height: 100% !important;
       object-fit: contain !important;
       object-position: center !important;
       filter: drop-shadow(0 24px 60px rgba(26,26,26,.18));
     }
     .hero-visual-illus::after { display: none !important; }
+    .hero-visual-illus .hero-tag { display: none; }
     .hero-grid h1 { font-size: clamp(28px, 3.8vw, 48px); }
     .eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
